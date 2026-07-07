@@ -1,0 +1,8 @@
+{
+  "dashboard": "dashboard/dashboard.html",
+  "claro": "pages/claro.html",
+  "carriers": "pages/carriers.html",
+  "openmarket": "pages/openmarket.html",
+  "jornadas": "pages/jornadas.html",
+  "resumen": "pages/resumen.html"
+}

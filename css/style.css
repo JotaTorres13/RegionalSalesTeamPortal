@@ -226,19 +226,15 @@ HERO
 KPIs
 ======================================================*/
 
-.kpi-container{
-
-    width:95%;
-
-    max-width:1500px;
-
-    margin:35px auto;
+.kpi-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(3,1fr);
 
-    gap:20px;
+    gap:25px;
+
+    margin-top:35px;
 
 }
 
@@ -785,7 +781,7 @@ SIDEBAR
 
     height:100vh;
 
-    background:#111;
+    background:#171717;
 
     color:white;
 

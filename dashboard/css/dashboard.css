@@ -1,0 +1,1411 @@
+/*=========================================================
+    REGIONAL SALES TEAM PORTAL
+    Dashboard CSS
+    Version 2.0
+=========================================================*/
+
+/*=========================================================
+RESET
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f6fa;
+    color:#2c3e50;
+}
+
+/*=========================================================
+VARIABLES
+=========================================================*/
+
+:root{
+
+    --xiaomi:#ff6900;
+    --xiaomi-dark:#e85f00;
+
+    --white:#ffffff;
+
+    --background:#f5f6fa;
+
+    --text:#2c3e50;
+
+    --text-light:#6c757d;
+
+    --success:#2ecc71;
+
+    --warning:#f39c12;
+
+    --danger:#e74c3c;
+
+    --border:#ececec;
+
+    --shadow:0 12px 35px rgba(0,0,0,.12);
+
+    --radius:22px;
+
+    --transition:.30s;
+
+}
+
+/*=========================================================
+CONTENEDOR GENERAL
+=========================================================*/
+
+.dashboard-container{
+
+    width:100%;
+
+    max-width:1600px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+    animation:fadeIn .45s ease;
+
+}
+
+/*=========================================================
+ANIMACIÓN
+=========================================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================================
+TÍTULO
+=========================================================*/
+
+.dashboard-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.dashboard-title h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#222;
+
+}
+
+.dashboard-title p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+/*=========================================================
+HERO
+=========================================================*/
+
+.hero{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:white;
+
+    line-height:1.1;
+
+}
+
+.hero h1 span{
+
+    color:var(--xiaomi);
+
+}
+
+.hero p{
+
+    margin-top:15px;
+
+    color:white;
+
+    font-size:24px;
+
+}
+
+.last-update{
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    color:#eeeeee;
+
+}
+
+/*=========================================================
+PANEL FILTROS
+=========================================================*/
+
+.filters-panel{
+
+    display:grid;
+
+    grid-template-columns:repeat(8,1fr) 150px 150px;
+
+    gap:18px;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.16);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    align-items:center;
+
+}
+
+.filters-panel select{
+
+    width:100%;
+
+    padding:13px 15px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    outline:none;
+
+    background:white;
+
+    font-size:14px;
+
+    font-family:Poppins;
+
+    transition:var(--transition);
+
+}
+
+.filters-panel select:hover{
+
+    border-color:var(--xiaomi);
+
+}
+
+.filters-panel select:focus{
+
+    border-color:var(--xiaomi);
+
+}
+
+/*=========================================================
+BOTONES
+=========================================================*/
+
+.btn-primary{
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--xiaomi);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    background:var(--xiaomi-dark);
+
+}
+
+.btn-secondary{
+
+    width:100%;
+
+    padding:13px;
+
+    border-radius:14px;
+
+    border:2px solid var(--xiaomi);
+
+    background:white;
+
+    color:var(--xiaomi);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--xiaomi);
+
+    color:white;
+
+}
+
+/*=========================================================
+GRID GENERAL
+=========================================================*/
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    gap:25px;
+
+}
+
+/*=========================================================
+ESPACIADO
+=========================================================*/
+
+section{
+
+    margin-bottom:10px;
+
+}
+
+/*=========================================================
+KPIs
+=========================================================*/
+
+.kpi-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    width:100%;
+
+}
+
+
+/*=========================================================
+TARJETA KPI
+=========================================================*/
+
+.kpi-box{
+
+    position:relative;
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    min-height:210px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+
+.kpi-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.18);
+
+}
+
+
+/*=========================================================
+LÍNEA SUPERIOR
+=========================================================*/
+
+.kpi-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:var(--xiaomi);
+
+}
+
+
+/*=========================================================
+COLORES
+=========================================================*/
+
+.kpi-primary::before{
+
+    background:var(--xiaomi);
+
+}
+
+.kpi-success::before{
+
+    background:var(--success);
+
+}
+
+.kpi-warning::before{
+
+    background:var(--warning);
+
+}
+
+.kpi-danger::before{
+
+    background:var(--danger);
+
+}
+
+
+/*=========================================================
+ICONO
+=========================================================*/
+
+.kpi-icon{
+
+    position:absolute;
+
+    top:22px;
+
+    right:22px;
+
+    font-size:42px;
+
+    color:#d9d9d9;
+
+    opacity:.45;
+
+    transition:var(--transition);
+
+}
+
+.kpi-box:hover .kpi-icon{
+
+    transform:scale(1.15);
+
+    opacity:.75;
+
+}
+
+
+/*=========================================================
+TÍTULO
+=========================================================*/
+
+.kpi-box span{
+
+    font-size:16px;
+
+    color:var(--text-light);
+
+    font-weight:500;
+
+}
+
+
+/*=========================================================
+VALOR
+=========================================================*/
+
+.kpi-box h2{
+
+    margin-top:18px;
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    line-height:1;
+
+}
+
+
+/*=========================================================
+FORECAST %
+=========================================================*/
+
+.kpi-box small{
+
+    margin-top:8px;
+
+    font-size:16px;
+
+    color:var(--text-light);
+
+}
+
+
+/*=========================================================
+TENDENCIA
+=========================================================*/
+
+.kpi-trend{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:18px;
+
+    font-size:14px;
+
+}
+
+
+.kpi-up{
+
+    color:var(--success);
+
+    font-weight:600;
+
+}
+
+.kpi-down{
+
+    color:var(--danger);
+
+    font-weight:600;
+
+}
+
+.kpi-neutral{
+
+    color:var(--text-light);
+
+    font-weight:600;
+
+}
+
+
+/*=========================================================
+ESTADO ALERTA
+=========================================================*/
+
+.alert{
+
+    background:#fff7f5;
+
+}
+
+.alert h2{
+
+    color:var(--danger);
+
+}
+
+
+/*=========================================================
+ESTADO CUMPLIMIENTO
+=========================================================*/
+
+.kpi-success h2{
+
+    color:var(--success);
+
+}
+
+.kpi-warning h2{
+
+    color:var(--warning);
+
+}
+
+.kpi-primary h2{
+
+    color:var(--xiaomi);
+
+}
+
+.kpi-danger h2{
+
+    color:var(--danger);
+
+}
+
+
+/*=========================================================
+ANIMACIÓN CONTADOR
+=========================================================*/
+
+.kpi-box h2{
+
+    animation:fadeNumber .6s ease;
+
+}
+
+@keyframes fadeNumber{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+
+@media(max-width:1400px){
+
+    .kpi-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:850px){
+
+    .kpi-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*=========================================================
+CHARTS
+=========================================================*/
+
+.charts-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.chart-card{
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.chart-card h3{
+
+    margin-bottom:25px;
+
+    font-size:20px;
+
+    color:var(--text);
+
+    font-weight:600;
+
+}
+
+.chart-card canvas{
+
+    width:100% !important;
+
+    height:340px !important;
+
+}
+
+/*=========================================================
+TABLA
+=========================================================*/
+
+.table-card{
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.table-card h3{
+
+    margin-bottom:25px;
+
+    font-size:22px;
+
+}
+
+.table-responsive{
+
+    overflow-x:auto;
+
+}
+
+.table-card table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.table-card thead{
+
+    background:var(--xiaomi);
+
+    color:white;
+
+}
+
+.table-card th{
+
+    padding:18px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
+.table-card td{
+
+    padding:16px;
+
+    border-bottom:1px solid #ececec;
+
+    text-align:center;
+
+    font-size:14px;
+
+}
+
+.table-card tbody tr{
+
+    transition:.25s;
+
+}
+
+.table-card tbody tr:hover{
+
+    background:#fff5ef;
+
+}
+
+/*=========================================================
+ESTADOS TABLA
+=========================================================*/
+
+.status-success{
+
+    color:var(--success);
+
+    font-weight:600;
+
+}
+
+.status-warning{
+
+    color:var(--warning);
+
+    font-weight:600;
+
+}
+
+.status-danger{
+
+    color:var(--danger);
+
+    font-weight:600;
+
+}
+
+/*=========================================================
+ALERTAS
+=========================================================*/
+
+.alerts-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.alerts-card h3{
+
+    margin-bottom:25px;
+
+}
+
+.alerts-card ul{
+
+    list-style:none;
+
+}
+
+.alerts-card li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    border-left:6px solid var(--xiaomi);
+
+    background:#fafafa;
+
+    border-radius:14px;
+
+    transition:.25s;
+
+}
+
+.alerts-card li:hover{
+
+    background:#fff3eb;
+
+}
+
+.alert-high{
+
+    border-left-color:var(--danger) !important;
+
+}
+
+.alert-medium{
+
+    border-left-color:var(--warning) !important;
+
+}
+
+.alert-low{
+
+    border-left-color:var(--success) !important;
+
+}
+
+/*=========================================================
+MENU DASHBOARD
+=========================================================*/
+
+.menu-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:25px;
+
+}
+
+.menu-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.menu-card i{
+
+    font-size:42px;
+
+    color:var(--xiaomi);
+
+    margin-bottom:20px;
+
+}
+
+.menu-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.menu-card p{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+/*=========================================================
+CARDS PEQUEÑAS
+=========================================================*/
+
+.info-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.info-card h4{
+
+    margin-bottom:12px;
+
+}
+
+.info-card p{
+
+    color:var(--text-light);
+
+}
+
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+
+@media(max-width:1400px){
+
+.charts-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.menu-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.menu-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.menu-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.table-card{
+
+padding:20px;
+
+}
+
+.chart-card{
+
+padding:20px;
+
+}
+
+}
+
+/*=========================================================
+ DASHBOARD STATUS BAR
+=========================================================*/
+
+.status-bar{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.status-item{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    transition:var(--transition);
+
+}
+
+.status-item:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.status-item i{
+
+    font-size:28px;
+
+    color:var(--xiaomi);
+
+}
+
+.status-item h4{
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
+}
+
+.status-item p{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+
+/*=========================================================
+ TOP 10 BEST SELLERS
+=========================================================*/
+
+.best-sellers{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.best-sellers h3{
+
+    margin-bottom:25px;
+
+}
+
+.best-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+
+    gap:20px;
+
+}
+
+.best-card{
+
+    border-radius:18px;
+
+    padding:18px;
+
+    text-align:center;
+
+    border:1px solid #ececec;
+
+    transition:var(--transition);
+
+}
+
+.best-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.best-card img{
+
+    width:100px;
+
+    height:100px;
+
+    object-fit:contain;
+
+    margin-bottom:15px;
+
+}
+
+.best-card h4{
+
+    font-size:15px;
+
+    margin-bottom:6px;
+
+}
+
+.best-card span{
+
+    color:var(--xiaomi);
+
+    font-weight:700;
+
+}
+
+
+/*=========================================================
+ LOADING
+=========================================================*/
+
+.loading{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.spinner{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:5px solid #ececec;
+
+    border-top:5px solid var(--xiaomi);
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*=========================================================
+ SCROLLBAR
+=========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--xiaomi);
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--xiaomi-dark);
+
+}
+
+
+/*=========================================================
+ DARK MODE
+=========================================================*/
+
+body.dark{
+
+    background:#141414;
+
+    color:white;
+
+}
+
+body.dark .kpi-box,
+body.dark .chart-card,
+body.dark .table-card,
+body.dark .alerts-card,
+body.dark .menu-card,
+body.dark .status-item,
+body.dark .best-card,
+body.dark .best-sellers{
+
+    background:#202020;
+
+    color:white;
+
+}
+
+body.dark .table-card td{
+
+    border-color:#343434;
+
+}
+
+body.dark .filters-panel{
+
+    background:#202020;
+
+}
+
+body.dark select{
+
+    background:#2d2d2d;
+
+    color:white;
+
+    border-color:#444;
+
+}
+
+body.dark .dashboard-title p{
+
+    color:#d0d0d0;
+
+}
+
+
+/*=========================================================
+ FOOTER DASHBOARD
+=========================================================*/
+
+.dashboard-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 0;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+
+/*=========================================================
+ RESPONSIVE
+=========================================================*/
+
+@media(max-width:1200px){
+
+    .status-bar{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .status-bar{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .best-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .best-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .dashboard-footer{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+
+    }
+
+}

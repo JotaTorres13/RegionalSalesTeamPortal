@@ -1,0 +1,364 @@
+<!-- =====================================================
+    DASHBOARD EJECUTIVO
+====================================================== -->
+
+
+<section class="dashboard-container">
+
+    <!-- =======================
+            TÍTULO
+    ======================== -->
+
+    <div class="dashboard-title">
+
+        <h1>Sistema de Gestión Comercial</h1>
+
+        <p>
+
+            Dashboard Ejecutivo · Regional Sales Team
+
+        </p>
+
+    </div>
+
+    <!-- =======================
+            FILTROS
+    ======================== -->
+
+    <div class="filters-panel">
+
+        <select id="filterChannel">
+            <option>Canal</option>
+            <option>Claro</option>
+            <option>Carriers</option>
+            <option>Open Market</option>
+        </select>
+
+        <select id="filterCity">
+            <option>Ciudad Manager</option>
+        </select>
+
+        <select id="filterSupervisor">
+            <option>Supervisor</option>
+        </select>
+
+        <select id="filterPDV">
+            <option>Punto de Venta</option>
+        </select>
+
+        <select id="filterCategory">
+            <option>Categoría</option>
+        </select>
+
+        <select id="filterModel">
+            <option>Modelo</option>
+        </select>
+
+        <select id="filterMonth">
+            <option>Mes</option>
+        </select>
+
+        <select id="filterWeek">
+            <option>Semana</option>
+        </select>
+
+        <button class="btn-primary">
+
+            Actualizar
+
+        </button>
+
+        <button class="btn-secondary">
+
+            Cargar Excel
+
+        </button>
+
+    </div>
+
+    <!-- =======================
+            KPI
+    ======================== -->
+<div class="kpi-grid">
+
+<div class="kpi-box kpi-primary">
+
+    <i class="fa-solid fa-bullseye kpi-icon"></i>
+
+    <span>Target (Unidades)</span>
+
+    <h2 id="targetGeneral">0</h2>
+
+    <div class="kpi-trend">
+
+        <span class="kpi-up">
+
+            ▲ +5%
+
+        </span>
+
+        <span>
+
+            vs semana anterior
+
+        </span>
+
+    </div>
+
+</div>
+
+<div class="kpi-box kpi-primary">
+
+    <i class="fa-solid fa-mobile-screen-button kpi-icon"></i>
+
+    <span>Sell Out (Unidades)</span>
+
+    <h2 id="sellOut">0</h2>
+
+    <div class="kpi-trend">
+
+        <span class="kpi-up">
+
+            ▲ +7%
+
+        </span>
+
+        <span>
+
+            vs ayer
+
+        </span>
+
+    </div>
+
+</div>
+
+<div class="kpi-box kpi-success">
+
+    <i class="fa-solid fa-chart-line kpi-icon"></i>
+
+    <span>Cumplimiento</span>
+
+    <h2 id="compliance">0%</h2>
+
+    <div class="kpi-trend">
+
+        <span class="kpi-up">
+
+            ▲ +2%
+
+        </span>
+
+        <span>
+
+            Meta mensual
+
+        </span>
+
+    </div>
+
+</div>
+
+<div class="kpi-box kpi-warning">
+
+    <i class="fa-solid fa-calendar-week kpi-icon"></i>
+
+    <span>Forecast</span>
+
+    <h2 id="forecastUnits">0</h2>
+
+    <small id="forecastPercent">
+
+        0%
+
+    </small>
+
+    <div class="kpi-trend">
+
+        <span class="kpi-warning">
+
+            ► En seguimiento
+
+        </span>
+
+    </div>
+
+</div>
+
+<div class="kpi-box kpi-primary">
+
+    <i class="fa-solid fa-boxes-stacked kpi-icon"></i>
+
+    <span>Inventario (Unidades)</span>
+
+    <h2 id="inventory">0</h2>
+
+    <div class="kpi-trend">
+
+        <span class="kpi-neutral">
+
+            DOS General
+
+        </span>
+
+    </div>
+
+</div>
+
+<div class="kpi-box kpi-danger">
+
+    <i class="fa-solid fa-triangle-exclamation kpi-icon"></i>
+
+    <span>Alertas</span>
+
+    <h2 id="alerts">0</h2>
+
+    <div class="kpi-trend">
+
+        <span class="kpi-down">
+
+            Revisar inmediatamente
+
+        </span>
+
+    </div>
+
+</div>
+
+ </div>
+
+    <!-- =======================
+            GRÁFICOS
+    ======================== -->
+
+    <div class="charts-grid">
+
+        <div class="chart-card">
+
+            <h3>
+
+                Sell Out Diario
+
+            </h3>
+
+            <canvas id="dailySalesChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h3>
+
+                Cumplimiento por Canal
+
+            </h3>
+
+            <canvas id="channelChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- =======================
+            SEGUNDA FILA
+    ======================== -->
+
+    <div class="charts-grid">
+
+        <div class="chart-card">
+
+            <h3>
+
+                Forecast Semanal
+
+            </h3>
+
+            <canvas id="forecastChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h3>
+
+                Inventario por Categoría
+
+            </h3>
+
+            <canvas id="inventoryChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- =======================
+            TABLA
+    ======================== -->
+
+    <div class="table-card">
+
+        <h3>
+
+            Resumen Comercial por Supervisor
+
+        </h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Supervisor</th>
+
+                    <th>Canal</th>
+
+                    <th>SO (Uds)</th>
+
+                    <th>Target (Uds)</th>
+
+                    <th>Cumplimiento</th>
+
+                    <th>Inventario</th>
+
+                    <th>DOS</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="dashboardTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- =======================
+            ALERTAS
+    ======================== -->
+
+    <div class="alerts-card">
+
+        <h3>
+
+            Alertas Inteligentes
+
+        </h3>
+
+        <ul id="alertsList">
+
+            <li>
+
+                No existen alertas.
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<script src="js/dashboard.js"></script>
