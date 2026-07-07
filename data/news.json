@@ -1,0 +1,18 @@
+[
+    {
+        "titulo":"Bienvenido al Portal",
+        "descripcion":"Versión 1.1A instalada correctamente."
+    },
+    {
+        "titulo":"Sistema de Gestión Comercial",
+        "descripcion":"Próximamente disponible."
+    },
+    {
+        "titulo":"Power BI",
+        "descripcion":"Integración en desarrollo."
+    },
+    {
+        "titulo":"Excel",
+        "descripcion":"Carga automática próximamente."
+    }
+]
