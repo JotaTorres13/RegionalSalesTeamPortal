@@ -1,7 +1,9 @@
 <!-- =====================================================
     DASHBOARD EJECUTIVO
 ====================================================== -->
-
+<script>
+alert("Dashboard cargado");
+</script>
 
 <section class="dashboard-container">
 
@@ -27,40 +29,53 @@
 
     <div class="filters-panel">
 
-        <select id="filterChannel">
-            <option>Canal</option>
-            <option>Claro</option>
-            <option>Carriers</option>
-            <option>Open Market</option>
-        </select>
+    <select id="filterChannel">
 
-        <select id="filterCity">
-            <option>Ciudad Manager</option>
-        </select>
+    <option value="">Todos los canales</option>
 
-        <select id="filterSupervisor">
-            <option>Supervisor</option>
-        </select>
+    </select>
 
-        <select id="filterPDV">
-            <option>Punto de Venta</option>
-        </select>
+    <select id="filterChannel">
 
-        <select id="filterCategory">
-            <option>Categoría</option>
-        </select>
+    <option value="">Todos los canales</option>
 
-        <select id="filterModel">
-            <option>Modelo</option>
-        </select>
+    </select>
 
-        <select id="filterMonth">
-            <option>Mes</option>
-        </select>
+    <select id="filterSupervisor">
 
-        <select id="filterWeek">
-            <option>Semana</option>
-        </select>
+    <option value="">Todos</option>
+
+    </select>
+
+    <select id="filterPDV">
+
+    <option value="">Todos</option>
+
+    </select>
+
+    <select id="filterCategory">
+
+    <option value="">Todas</option>
+
+    </select>
+
+    <select id="filterModel">
+
+    <option value="">Todos</option>
+
+    </select>
+
+    <select id="filterMonth">
+
+    <option value="">Todos</option>
+
+    </select>
+
+    <select id="filterWeek">
+
+    <option value="">Todas</option>
+
+    </select>
 
         <button class="btn-primary">
 
@@ -68,11 +83,17 @@
 
         </button>
 
-        <button class="btn-secondary">
+        <button class="btn-secondary" id="btnExcel">
 
             Cargar Excel
 
         </button>
+
+<input
+    type="file"
+    id="excelFile"
+    accept=".xlsx,.xls"
+    style="display:none;">
 
     </div>
 

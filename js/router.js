@@ -32,6 +32,20 @@ async function loadPage(route){
 
         document.getElementById("appContent").innerHTML = html;
 
+        /*=========================================
+            INICIALIZAR MÓDULOS 
+        =========================================*/
+
+        if(route === "dashboard"){
+
+        if(window.initDashboard){
+
+        window.initDashboard();
+
+    }
+
+}
+
     }
 
     catch(error){
