@@ -14,7 +14,7 @@
 :root{
 
     --xiaomi:#ff6900;
-    --xiaomi-dark:#e85f00;
+    --xiaomi-dark: #e85f00;
 
     --glass:rgba(255,255,255,.15);
     --glass-dark:rgba(0,0,0,.35);
@@ -35,7 +35,7 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    background:#f4f6fb;
+    background: #f4f6fb;
 
     color:var(--text);
 
@@ -914,5 +914,202 @@ SIDEBAR
 .sidebar-footer button:hover{
 
     background:#ff6900;
+
+}
+
+.hero,
+.kpi-container,
+.menu-grid,
+.news{
+
+    margin-left:310px;
+
+    width:calc(100% - 340px);
+
+}
+
+/*==================================================
+LOGIN MODAL
+==================================================*/
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    z-index:99999;
+
+}
+
+.modal.active{
+
+    display:flex;
+
+}
+
+.modal-content{
+
+    width:430px;
+
+    border-radius:25px;
+
+    background:white;
+
+    overflow:hidden;
+
+    animation:loginFade .35s ease;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+@keyframes loginFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.modal-header{
+
+    padding:35px;
+
+    background:#ff6900;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.login-logo{
+
+    width:70px;
+
+    margin-bottom:15px;
+
+}
+
+.modal-header h2{
+
+    font-size:26px;
+
+}
+
+.modal-header p{
+
+    opacity:.9;
+
+    margin-top:5px;
+
+}
+
+.modal-body{
+
+    padding:35px;
+
+}
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #DDD;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    border-color:#ff6900;
+
+}
+
+#loginButton{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ff6900;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#loginButton:hover{
+
+    background:#e55f00;
+
+}
+
+#loginError{
+
+    margin-top:15px;
+
+    color:red;
+
+    text-align:center;
+
+    min-height:20px;
 
 }

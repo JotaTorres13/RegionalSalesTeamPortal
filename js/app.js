@@ -219,27 +219,7 @@ LOGIN
 
 function mostrarLogin(){
 
-    const usuario=prompt("Usuario");
-
-    const password=prompt("Contraseña");
-
-    if(
-
-        usuario==="1044002312" &&
-
-        password==="1044002312"
-
-    ){
-
-        alert("Bienvenido José Torres");
-
-    }
-
-    else{
-
-        alert("Usuario o contraseña incorrectos");
-
-    }
+    abrirLogin();
 
 }
 
